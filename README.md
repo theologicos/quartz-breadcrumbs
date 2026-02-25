@@ -10,12 +10,27 @@ npx quartz plugin add github:quartz-community/breadcrumbs
 
 ## Usage
 
-```ts
-// quartz.layout.ts
-import * as Plugin from "./.quartz/plugins";
+```yaml title="quartz.config.yaml"
+plugins:
+  - source: github:quartz-community/breadcrumbs
+    enabled: true
+    layout:
+      position: beforeBody
+      priority: 5
+      condition: not-index
+```
 
-// Add to your layout
-Plugin.Breadcrumbs(); // in the appropriate layout section
+For advanced use cases, you can override in TypeScript:
+
+```ts title="quartz.ts (override)"
+import * as ExternalPlugin from "./.quartz/plugins";
+
+ExternalPlugin.Breadcrumbs({
+  spacerSymbol: "❯",
+  rootName: "Home",
+  resolveFrontmatterTitle: true,
+  showCurrentPage: true,
+});
 ```
 
 ## Configuration
@@ -29,7 +44,7 @@ Plugin.Breadcrumbs(); // in the appropriate layout section
 
 ## Documentation
 
-See the [Quartz documentation](https://quartz.jzhao.xyz/) for more information.
+See the [Quartz documentation](https://quartz.jzhao.xyz/features/breadcrumbs) for more information.
 
 ## License
 
