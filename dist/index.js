@@ -146,7 +146,7 @@ var defaultOptions = {
 };
 function formatCrumb(displayName, baseSlug, currentSlug) {
   return {
-    displayName: displayName.replaceAll("-", " "),
+    displayName,
     path: resolveRelative(baseSlug, currentSlug)
   };
 }

@@ -33,7 +33,7 @@ const defaultOptions: BreadcrumbOptions = {
 
 function formatCrumb(displayName: string, baseSlug: string, currentSlug: string): CrumbData {
   return {
-    displayName: displayName.replaceAll("-", " "),
+    displayName,
     path: resolveRelative(baseSlug, currentSlug),
   };
 }
