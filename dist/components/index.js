@@ -1,25 +1,9 @@
-import { simplifySlug as simplifySlug$1, joinSegments } from '@quartz-community/utils';
+import { classNames } from '@quartz-community/utils/lang';
+import { simplifySlug, resolveRelative } from '@quartz-community/utils/path';
+import { joinSegments } from '@quartz-community/utils';
 import { jsx, jsxs } from 'preact/jsx-runtime';
 
 // src/util/lang.ts
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-function simplifySlug(fp) {
-  return simplifySlug$1(fp);
-}
-function resolveRelative(current, target) {
-  const simplified = simplifySlug(target);
-  const rootPath = pathToRoot(current);
-  return joinSegments(rootPath, simplified);
-}
-function pathToRoot(slug) {
-  let rootPath = slug.split("/").filter((x) => x !== "").slice(0, -1).map((_) => "..").join("/");
-  if (rootPath.length === 0) {
-    rootPath = ".";
-  }
-  return rootPath;
-}
 var FileTrieNode = class _FileTrieNode {
   isFolder;
   children;
