@@ -1,12 +1,12 @@
-import type { QuartzComponent, QuartzComponentProps } from "@quartz-community/types";
+import type {
+  QuartzComponent,
+  QuartzComponentConstructor,
+  QuartzComponentProps,
+} from "@quartz-community/types";
 import { classNames } from "../util/lang";
 import { resolveRelative, simplifySlug } from "../util/path";
 import { FileTrieNode, trieFromAllFiles } from "../util/fileTrie";
 import style from "./styles/breadcrumbs.scss";
-
-type QuartzComponentConstructor<Options extends object | undefined = undefined> = (
-  opts: Options,
-) => QuartzComponent;
 
 type CrumbData = {
   displayName: string;
