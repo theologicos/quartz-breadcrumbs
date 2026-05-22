@@ -94,12 +94,31 @@
     "dependencies": [],
     "defaultOrder": 50,
     "defaultEnabled": true,
-    "defaultOptions": {},
+    "defaultOptions": {
+      "spacerSymbol": "❯",
+      "rootName": "Home",
+      "resolveFrontmatterTitle": true,
+      "showCurrentPage": true
+    },
     "components": {
       "Breadcrumbs": {
         "displayName": "Breadcrumbs",
         "defaultPosition": "beforeBody",
         "defaultPriority": 5
+      }
+    },
+    "optionSchema": {
+      "spacerSymbol": {
+        "type": "string"
+      },
+      "rootName": {
+        "type": "string"
+      },
+      "resolveFrontmatterTitle": {
+        "type": "boolean"
+      },
+      "showCurrentPage": {
+        "type": "boolean"
       }
     }
   }
