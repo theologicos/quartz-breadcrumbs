@@ -71,6 +71,11 @@ export default ((opts?: Partial<BreadcrumbOptions>) => {
 
       if (idx === pathNodes.length - 1) {
         crumb.path = "";
+
+        const isFolder = node.children?.length > 0;
+
+        if (!isFolder) crumb.displayName += ".md";
+        else crumb.displayName += "/";
       }
 
       return crumb;
