@@ -1,14 +1,14 @@
 {
-  "name": "@quartz-community/breadcrumbs",
+  "name": "@theologicos/quartz-breadcrumbs",
   "version": "0.1.0",
   "description": "Breadcrumbs navigation component for Quartz",
   "type": "module",
   "license": "MIT",
   "author": "Quartz Community",
-  "homepage": "https://github.com/quartz-community/breadcrumbs",
+  "homepage": "https://github.com/theologicos/quartz-breadcrumbs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/quartz-community/breadcrumbs"
+    "url": "https://github.com/theologicos/quartz-breadcrumbs"
   },
   "keywords": [
     "quartz",
