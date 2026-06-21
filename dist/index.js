@@ -217,7 +217,7 @@ function trieFromAllFiles(allFiles) {
 }
 
 // src/components/styles/breadcrumbs.scss
-var breadcrumbs_default = ".breadcrumb-container {\n  font-size: 0.9rem;\n  margin: 0;\n  margin-top: 0.75rem;\n  padding: 0;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  gap: 0;\n}\n.breadcrumb-container a {\n  font-weight: 400;\n}\n\n.breadcrumb-element p {\n  margin: 0;\n  margin-left: 0.5rem;\n  padding: 0;\n  line-height: normal;\n}\n.breadcrumb-element {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n}";
+var breadcrumbs_default = ".breadcrumb-container {\n  font-size: 0.9rem;\n  margin: 0;\n  margin-top: 0.75rem;\n  padding: 0;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  gap: 0;\n}\n.breadcrumb-container a {\n  font-weight: 400;\n}\n\n.breadcrumb-element p {\n  margin: 0;\n  padding: 0;\n  line-height: normal;\n}\n.breadcrumb-element {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n}";
 
 // src/components/Breadcrumbs.tsx
 var defaultOptions = {
@@ -258,6 +258,9 @@ var Breadcrumbs_default = ((opts) => {
       }
       if (idx === pathNodes.length - 1) {
         crumb.path = "";
+        const isFolder = node.children?.length > 0;
+        if (!isFolder) crumb.displayName += ".md";
+        else crumb.displayName += "/";
       }
       return crumb;
     });
